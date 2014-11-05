@@ -33,7 +33,7 @@ $(function(){
             return col;
           },
       gutterWidth: 15,
-      isFitWidth: false
+      isFitWidth: true
     });
   });
 
