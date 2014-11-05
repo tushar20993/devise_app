@@ -1,0 +1,19 @@
+<h1><%= link_to image_tag(current_user.avatar.url(:medium)), current_user %>
+<b>
+
+  <% if current_user.name.nil? %>
+  <%= current_user.email %>
+  <% else %>
+  <%= current_user.name %>
+  <% end %>
+
+ </b>
+</h1>
+<span>
+  <%= link_to "View profile", current_user %>
+</span>
+
+<br>
+<span>
+  <%= pluralize(current_user.microposts.count, "micropost") %>
+</span>

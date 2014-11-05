@@ -1,0 +1,27 @@
+<% provide(:title, 'Micropost') %>
+
+<h1> Micropost </h1>
+
+<div class = "row">
+
+<aside class = "span4">
+<%= image_tag(@micropost_avatar.url(:medium)) %>
+</aside>
+
+
+<aside class = "span6">
+<h2>
+<%=  @micropost_item %>
+</h2>
+</aside> 
+
+</div>
+
+
+<br />
+<div class="timestamp">
+Posted <%= time_ago_in_words(@thing.created_at) %> ago.
+</div>
+    
+ 
+

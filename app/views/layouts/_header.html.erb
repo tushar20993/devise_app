@@ -1,0 +1,32 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Bloodshot", root_path, id: "logo" %>
+      <ul class = "nav pull-left">
+      <li class="round-image-50">       <%= link_to image_tag("logo.jpg", alt: "Bloodshot"), root_path %></li>
+      </ul><nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Help", help_path %></li>
+          <% if signed_in? %>
+            <li><%= link_to "Users", users_path %></li>
+            
+                <li><%= link_to "Profile", current_user %></li>
+                 <li><%= link_to "Settings", edit_user_registration_path(current_user) %></li>
+		
+                <li class="divider"></li>
+                <li>
+                <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+                </li>
+		
+              </ul>
+		
+            </li>
+          <% else %>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
